@@ -27,13 +27,13 @@ class InvoiceRepository
   def find_all_by_merchant_id(merchant_id_num)
     all.select { |invoice| invoice.merchant_id == merchant_id_num }
   end
-  
+
   def find_all_by_status(status_entry)
     all.select { |invoice| invoice.status == status_entry.to_sym}
   end
 
   def inspect
-  "#<#{self.class} #{@merchants.size} rows>"
+  "#<#{self.class} #{all.size} rows>"
   end
 
 end

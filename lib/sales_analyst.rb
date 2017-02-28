@@ -145,9 +145,9 @@ class SalesAnalyst
   #   engine.merchants.all.map {|merchant| revenue_by_merchant(merchant.id)}
   # end
 
-  # #def top_revenue_earners(num_top = 20)
-  #   sorted_merchants_by_revenue_2[0..num_top-1]
-  # end
+  def top_revenue_earners(num_top = 20)
+    merchants_ranked_by_revenue[0..num_top-1]
+  end
   #
   # def sorted_merchants_by_revenue_2
   #   engine.merchants.all.sort_by { |merchant| [revenue_by_merchant(merchant.id) ? 0 : 1, revenue_by_merchant(merchant.id) || 0] }
