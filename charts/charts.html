@@ -15,12 +15,12 @@
           ["Cyber Monday (Nov 30)",            0.1434467E5],
           ["Green Monday (Dec 14)",            0.489981E4]
         ]);
-      
+
         var options = {
-          title: 'Revenues on Holidays 2016',
+          title: 'Revenues on Holidays 2015',
           pieHole: 0.4,
         };
-      
+
         var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
         chart.draw(data, options);
       }
@@ -33,7 +33,7 @@
         ["Original British Household Cavalry Named Life Guards Officer Cuirass and Helmet Set [ON8829]", 7495.0, "#ffad33"],
         ["Solid American Black Walnut Trestle Table", 7000.0, "#ffb84d"]
       ]);
-  
+
       var view = new google.visualization.DataView(data);
       view.setColumns([0, 1,
                        { calc: "stringify",
@@ -41,7 +41,7 @@
                          type: "string",
                          role: "annotation" },
                        2]);
-  
+
       var options = {
         title: "Top 4 Merchants With Highest Revenue (excluding test listing)",
         width: 600,
@@ -64,7 +64,7 @@
         ["Friday",    701, "#2980b9"],
         ["Saturday",  729, "#8e44ad"]
       ]);
-  
+
       var view = new google.visualization.DataView(data);
       view.setColumns([0, 1,
                        { calc: "stringify",
@@ -72,7 +72,7 @@
                          type: "string",
                          role: "annotation" },
                        2]);
-  
+
       var options = {
         title: "Number of Invoices by Day",
         width: 600,
@@ -83,7 +83,7 @@
       var chart = new google.visualization.ColumnChart(document.getElementById("invoices_by_day"));
       chart.draw(view, options);
   }
-  
+
       function drawMerchantRevenueChart() {
       var data = google.visualization.arrayToDataTable([
         ['Merchant ID', 'Item Count', { role: "style" } ],
