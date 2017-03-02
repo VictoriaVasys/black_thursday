@@ -160,26 +160,26 @@ class SalesAnalystTest < Minitest::Test
     assert_instance_of Item, sa.best_item_for_merchant(12334122)
     assert_equal 263432817, sa.best_item_for_merchant(12334122).id
   end
-  
+
   def test_it_finds_merchants_with_highest_revenue
     assert_instance_of Array, sa.merchants_with_highest_revenue
     assert_instance_of Merchant, sa.merchants_with_highest_revenue.first
   end
-  
-  def test_it_can_make_html_file
-    @se = SalesEngine.from_csv({
-      :items => "./data/items.csv",
-      :merchants => "./data/merchants.csv",
-      :invoices => "./data/invoices.csv",
-      :invoice_items => "./data//invoice_items.csv",
-      :transactions => "./data/transactions.csv",
-      :customers => "./data/customers.csv"
-    })
-    sa = SalesAnalyst.new(se)
-    
-    chart = sa.make_charts
-    assert File.read "./charts/charts.html"
-  end
+
+  # def test_it_can_make_html_file
+  #   @se = SalesEngine.from_csv({
+  #     :items => "./data/items.csv",
+  #     :merchants => "./data/merchants.csv",
+  #     :invoices => "./data/invoices.csv",
+  #     :invoice_items => "./data//invoice_items.csv",
+  #     :transactions => "./data/transactions.csv",
+  #     :customers => "./data/customers.csv"
+  #   })
+  #   sa = SalesAnalyst.new(se)
+  #
+  #   chart = sa.make_charts
+  #   assert File.read "./charts/charts.html"
+  # end
 
 end
 
